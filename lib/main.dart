@@ -56,8 +56,9 @@ class TodoModularApp extends StatelessWidget {
             final MediaQueryData data = MediaQuery.of(context);
             return MediaQuery(
               data: data.copyWith(
-                textScaler: TextScaler.linear(
-                  data.textScaler.scale.clamp(0.8, 1.2),
+                textScaler: data.textScaler.clamp(
+                  minScaleFactor: 0.8,
+                  maxScaleFactor: 1.2,
                 ),
               ),
               child: child!,
