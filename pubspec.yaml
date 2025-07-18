@@ -32,19 +32,13 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  
+  # Optimized asset configuration
   assets:
-    - lib/assets/icons/add.png
-    - lib/assets/icons/delete.png
-    - lib/assets/icons/timer.png
-    - assets/
     - assets/audio/
-    - assets/audio/alarm.mp3
-    - assets/audio/bell_notification.wav
-    - assets/audio/chime_notification.wav
-    - assets/audio/ding_notification.wav
-    - assets/audio/gentle_notification.wav
-    - assets/audio/success_notification.wav
-
+    - lib/assets/icons/
+    
+  # Font optimization
   fonts:
     - family: Inter
       fonts:
@@ -56,4 +50,7 @@ flutter:
           weight: 600
         - asset: fonts/Inter-Bold.ttf
           weight: 700
+
+  # Build optimizations
+  generate: true
 

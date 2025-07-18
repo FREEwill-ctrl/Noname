@@ -379,6 +379,29 @@ class PomodoroProvider with ChangeNotifier {
   bool get isStopped => _state == PomodoroState.stopped;
   bool get isInitial => _state == PomodoroState.initial;
 
+  void _updateState(PomodoroState newState) {
+    if (_state != newState) {
+      _state = newState;
+      notifyListeners();
+    }
+  }
+
+  void _updateSessionType(SessionType newSessionType) {
+    if (_sessionType != newSessionType) {
+      _sessionType = newSessionType;
+      _secondsRemaining = _getCurrentSessionDuration();
+      notifyListeners();
+    }
+  }
+
+  void _updateSecondsRemaining(int newSeconds) {
+    if (_secondsRemaining != newSeconds) {
+      _secondsRemaining = newSeconds;
+      // Only notify every second to reduce rebuild frequency
+      notifyListeners();
+    }
+  }
+
   @override
   void dispose() {
     _timer?.cancel();

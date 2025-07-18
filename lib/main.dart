@@ -48,15 +48,15 @@ class TodoModularApp extends StatelessWidget {
         builder: (context, themeProvider, _) => MaterialApp(
           title: 'BuildFork - Productivity Suite',
           debugShowCheckedModeBanner: false,
-          theme: AppTheme.lightTheme,
-          darkTheme: AppTheme.darkTheme,
-          themeMode: themeProvider.themeMode,
           navigatorKey: navigatorKey,
+          theme: themeProvider.currentTheme,
           home: const MainTabScreen(),
           builder: (context, child) {
+            // Limit text scale factor for better UI consistency
+            final MediaQueryData data = MediaQuery.of(context);
             return MediaQuery(
-              data: MediaQuery.of(context).copyWith(
-                textScaler: const TextScaler.linear(1.0),
+              data: data.copyWith(
+                textScaleFactor: data.textScaleFactor.clamp(0.8, 1.2),
               ),
               child: child!,
             );
@@ -74,12 +74,14 @@ class MainTabScreen extends StatefulWidget {
   State<MainTabScreen> createState() => _MainTabScreenState();
 }
 
-class _MainTabScreenState extends State<MainTabScreen> with TickerProviderStateMixin {
+class _MainTabScreenState extends State<MainTabScreen>
+    with TickerProviderStateMixin {
   int _selectedIndex = 0;
-  late PageController _pageController;
-  late AnimationController _animationController;
-  late Animation<double> _animation;
-  
+  late final PageController _pageController;
+  late final AnimationController _animationController;
+  late final Animation<double> _animation;
+
+  // Static pages list to avoid recreation on every build
   static const List<Widget> _pages = [
     HomeScreen(),
     PomodoroScreen(),
