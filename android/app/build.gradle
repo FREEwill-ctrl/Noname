@@ -96,8 +96,9 @@ android {
         
         release {
             debuggable false
-            minifyEnabled false
-            shrinkResources false
+            // Enable code shrinking and resource shrinking for smaller APK size
+            minifyEnabled true
+            shrinkResources true
             signingConfig keystoreProperties['keyAlias'] ? signingConfigs.release : signingConfigs.debug
             
             // Release-specific configurations
