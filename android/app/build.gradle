@@ -96,6 +96,7 @@ android {
         
         release {
             debuggable false
+            // Enable code shrinking and resource shrinking for smaller APK size
             minifyEnabled true
             shrinkResources true
             useProguard true
