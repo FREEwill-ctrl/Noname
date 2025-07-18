@@ -99,7 +99,6 @@ android {
             // Enable code shrinking and resource shrinking for smaller APK size
             minifyEnabled true
             shrinkResources true
-            useProguard true
             signingConfig keystoreProperties['keyAlias'] ? signingConfigs.release : signingConfigs.debug
             
             // Release-specific configurations
