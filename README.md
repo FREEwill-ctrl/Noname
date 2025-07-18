@@ -1,154 +1,208 @@
-# BuildFork - Optimized Productivity Suite
+# BuildFork Optimized - Advanced Todo & Pomodoro App
 
-## 🚀 Optimizations & Improvements
+[![Flutter](https://img.shields.io/badge/Flutter-3.16+-blue.svg)](https://flutter.dev/)
+[![Dart](https://img.shields.io/badge/Dart-3.0+-blue.svg)](https://dart.dev/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![CI/CD](https://github.com/FREEwill-ctrl/Noname/workflows/CI/CD%20Pipeline/badge.svg)](https://github.com/FREEwill-ctrl/Noname/actions)
 
-This is an optimized version of the original BuildFork Flutter application with significant improvements in performance, user experience, and audio notifications.
+An advanced productivity application built with Flutter that combines todo management, Pomodoro technique, and comprehensive analytics to boost your productivity.
 
-### ✨ Key Optimizations
+## 🚀 Features
 
-#### 1. **Enhanced User Interface**
-- **Material 3 Design**: Complete migration to Material 3 design system
-- **Modern Color Scheme**: Improved color palette with better contrast and accessibility
-- **Responsive Layout**: Better adaptation to different screen sizes
-- **Smooth Animations**: Added page transitions and micro-interactions
-- **Floating Navigation**: Modern bottom navigation with rounded corners and shadows
+### 📝 Advanced Todo Management
+- **Eisenhower Matrix**: Categorize tasks by urgency and importance
+- **Time Estimation**: Set estimated time for each task
+- **Time Tracking**: Track actual time spent on tasks
+- **Deadline Management**: Set due dates with smart notifications
+- **Priority Filtering**: Filter tasks by priority levels
+- **Calendar Integration**: View tasks in calendar format
 
-#### 2. **Improved Performance**
-- **Optimized State Management**: Better provider implementation with reduced rebuilds
-- **Const Constructors**: Added const constructors where possible to reduce widget rebuilds
-- **Memory Management**: Improved disposal of resources and timers
-- **Efficient Rendering**: Reduced unnecessary widget rebuilds
+### ⏱️ Enhanced Pomodoro Timer
+- **Customizable Sessions**: Configure work, short break, and long break durations
+- **Audio Notifications**: Multiple notification sounds to choose from
+- **Session Analytics**: Track completed sessions and productivity patterns
+- **Auto-cycle Management**: Automatic transition between work and break sessions
+- **Background Operation**: Continue timing even when app is minimized
 
-#### 3. **Enhanced Audio System**
-- **Multiple Sound Options**: 6 different notification sounds (Bell, Chime, Ding, Alarm, Gentle, Success)
-- **Volume Control**: Adjustable volume levels with visual feedback
-- **Vibration Support**: Haptic feedback integration
-- **Audio Settings**: Dedicated settings panel for audio customization
-- **Smart Audio Service**: Robust audio service with error handling and fallbacks
+### 📊 Comprehensive Analytics
+- **Time Distribution Charts**: Visualize how you spend your time
+- **Productivity Heatmap**: See your most productive days and hours
+- **Efficiency Tracking**: Compare estimated vs actual time spent
+- **Deadline Performance**: Track your deadline adherence
+- **Daily Summary**: Get insights into your daily productivity
+- **Progress Trends**: Monitor your productivity improvements over time
 
-#### 4. **Better User Experience**
-- **Haptic Feedback**: Added tactile feedback for button presses and interactions
-- **Auto-start Options**: Configurable auto-start for breaks and pomodoros
-- **Progress Indicators**: Visual progress bars for timer sessions
-- **Session Type Colors**: Color-coded sessions for better visual distinction
-- **Improved Typography**: Better font hierarchy using Inter font family
+### 🎨 Modern User Experience
+- **Material Design 3**: Clean, modern interface
+- **Dark/Light Themes**: Comfortable viewing in any lighting
+- **Responsive Design**: Optimized for phones and tablets
+- **Smooth Animations**: Fluid transitions and interactions
+- **Accessibility Support**: Screen reader and keyboard navigation support
 
-#### 5. **Code Quality Improvements**
-- **Better Error Handling**: Comprehensive try-catch blocks and fallbacks
-- **Null Safety**: Improved null safety throughout the codebase
-- **Documentation**: Better code documentation and comments
-- **Modular Architecture**: Cleaner separation of concerns
+## 📱 Screenshots
 
-### 🎵 Audio Features
+*Screenshots will be added after the first release*
 
-#### Available Notification Sounds:
-1. **Bell** - Classic notification bell
-2. **Chime** - Gentle chime sound
-3. **Ding** - Simple ding notification
-4. **Alarm** - Traditional alarm sound
-5. **Gentle** - Soft notification for breaks
-6. **Success** - Celebratory sound for completed pomodoros
+## 🏗️ Architecture
 
-#### Audio Controls:
-- **Volume Slider**: 0-100% volume control
-- **Sound Preview**: Test sounds before selecting
-- **Vibration Toggle**: Enable/disable haptic feedback
-- **Master Toggle**: Enable/disable all audio notifications
+This application follows a modular architecture with clean separation of concerns:
 
-### 🛠 Technical Improvements
+```
+lib/
+├── features/
+│   ├── todo/              # Todo management
+│   ├── pomodoro/          # Pomodoro timer
+│   └── analytics/         # Analytics and insights
+├── shared/                # Shared components and services
+└── main.dart             # Application entry point
+```
 
-#### Dependencies Updated:
-- Enhanced `audioplayers` integration
-- Better `shared_preferences` usage
-- Improved `provider` state management
-- Optimized `flutter_local_notifications`
+### Key Technologies
+- **Flutter 3.16+**: Cross-platform UI framework
+- **Provider**: State management
+- **SQLite**: Local data persistence
+- **FL Chart**: Beautiful charts and graphs
+- **Shared Preferences**: Settings storage
+- **Audio Players**: Sound notifications
 
-#### New Features:
-- **AudioService**: Centralized audio management
-- **Enhanced ThemeProvider**: Better theme switching with system theme support
-- **Improved PomodoroProvider**: More robust timer management
-- **Audio Settings Widget**: Dedicated UI for audio configuration
+## 🛠️ Getting Started
 
-### 📱 UI/UX Enhancements
+### Prerequisites
+- Flutter SDK 3.16 or higher
+- Dart SDK 3.0 or higher
+- Android Studio or VS Code
+- Git
 
-#### Navigation:
-- Floating bottom navigation bar
-- Smooth page transitions
-- Haptic feedback on tab switches
+### Installation
 
-#### Pomodoro Timer:
-- Color-coded session types
-- Progress ring indicator
-- Auto-start options
-- Better session management
-
-#### Settings:
-- Comprehensive audio settings
-- Theme switching options
-- Duration customization
-- Statistics tracking
-
-### 🔧 Installation & Setup
-
-1. **Prerequisites**:
+1. **Clone the repository**
    ```bash
-   flutter --version  # Ensure Flutter 3.0+ is installed
+   git clone https://github.com/FREEwill-ctrl/Noname.git
+   cd Noname
    ```
 
-2. **Install Dependencies**:
+2. **Install dependencies**
    ```bash
    flutter pub get
    ```
 
-3. **Run the App**:
+3. **Run the application**
    ```bash
    flutter run
    ```
 
-### 📊 Performance Metrics
+### Building for Release
 
-- **Reduced Widget Rebuilds**: ~30% improvement in rendering performance
-- **Memory Usage**: ~20% reduction in memory footprint
-- **Battery Life**: Improved battery efficiency with optimized timers
-- **Audio Latency**: <100ms audio response time
+#### Android
+```bash
+# Build APK
+flutter build apk --release
 
-### 🎯 Future Enhancements
+# Build App Bundle (recommended for Play Store)
+flutter build appbundle --release
+```
 
-- [ ] Custom sound upload functionality
-- [ ] Advanced notification scheduling
-- [ ] Cloud sync for settings
-- [ ] Wear OS companion app
-- [ ] Focus mode with app blocking
+#### iOS
+```bash
+flutter build ios --release
+```
+
+## 🧪 Testing
+
+Run the test suite:
+
+```bash
+# Run all tests
+flutter test
+
+# Run tests with coverage
+flutter test --coverage
+
+# Run specific test files
+flutter test test/features/analytics/
+```
+
+## 📈 Analytics Features
+
+### Time Tracking
+- Automatic time tracking for tasks
+- Manual time entry support
+- Break time tracking
+- Productivity scoring
+
+### Visual Analytics
+- **Daily Summary Cards**: Quick overview of daily productivity
+- **Time Distribution Pie Chart**: See where your time goes
+- **Efficiency Line Chart**: Track productivity trends over time
+- **Productivity Heatmap**: Identify your most productive patterns
+- **Deadline Performance**: Scatter plot of deadline adherence
+- **Estimated vs Actual**: Bar chart comparing time estimates
+
+### Insights
+- Productivity patterns identification
+- Time estimation accuracy
+- Peak productivity hours
+- Task completion rates
+- Break frequency analysis
+
+## 🔧 Configuration
+
+### Audio Settings
+The app includes multiple notification sounds:
+- Bell notification
+- Chime notification
+- Ding notification
+- Gentle notification
+- Success notification
+
+Configure your preferred sounds in the Pomodoro settings.
+
+### Data Storage
+- All data is stored locally using SQLite
+- Settings are persisted using SharedPreferences
+- No data is sent to external servers
+
+## 🤝 Contributing
+
+We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
+
+### Development Setup
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests for new features
+5. Ensure all tests pass
+6. Submit a pull request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- Flutter team for the amazing framework
+- The open-source community for inspiration and libraries
+- Contributors who help improve this project
+
+## 📞 Support
+
+If you encounter any issues or have questions:
+
+1. Check the [Issues](https://github.com/FREEwill-ctrl/Noname/issues) page
+2. Create a new issue if your problem isn't already reported
+3. Provide detailed information about your environment and the issue
+
+## 🗺️ Roadmap
+
+- [ ] Cloud synchronization
 - [ ] Team collaboration features
-
-### 🐛 Bug Fixes
-
-- Fixed timer accuracy issues
-- Resolved audio playback conflicts
-- Improved state persistence
-- Better error handling for audio files
-- Fixed theme switching edge cases
-
-### 📝 Changelog
-
-#### Version 1.0.1+2
-- ✅ Complete UI overhaul with Material 3
-- ✅ Enhanced audio notification system
-- ✅ Improved performance optimizations
-- ✅ Better error handling and stability
-- ✅ Added haptic feedback throughout the app
-- ✅ Implemented auto-start functionality
-- ✅ Enhanced theme management
-
-### 🤝 Contributing
-
-This optimized version maintains the original architecture while significantly improving performance and user experience. All changes are backward compatible with the original data structure.
-
-### 📄 License
-
-Same license as the original BuildFork project.
+- [ ] Advanced reporting
+- [ ] Integration with calendar apps
+- [ ] Wear OS support
+- [ ] Web version
+- [ ] AI-powered productivity insights
 
 ---
 
-**Note**: This optimized version includes all original features plus the enhancements listed above. The app maintains full compatibility with existing user data and preferences.
+**Built with ❤️ using Flutter**
 
