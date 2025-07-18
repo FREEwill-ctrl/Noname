@@ -441,6 +441,11 @@ class ThemeProvider with ChangeNotifier {
   ThemeMode _themeMode = ThemeMode.system;
   ThemeMode get themeMode => _themeMode;
 
+  // Returns currently selected ThemeData for ease of access from widgets
+  ThemeData get currentTheme {
+    return isDarkMode ? AppTheme.darkTheme : AppTheme.lightTheme;
+  }
+
   bool get isDarkMode {
     if (_themeMode == ThemeMode.system) {
       return PlatformDispatcher.instance.platformBrightness == Brightness.dark;
