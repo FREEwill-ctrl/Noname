@@ -1,6 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import '../../../lib/features/analytics/providers/time_tracking_provider.dart';
 import '../../../lib/features/todo/models/todo_model.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class MockTodoProvider {
   List<Todo> get todos => _todos;
@@ -15,6 +16,8 @@ void main() {
     late TimeTrackingProvider provider;
 
     setUp(() {
+      TestWidgetsFlutterBinding.ensureInitialized();
+      SharedPreferences.setMockInitialValues({});
       provider = TimeTrackingProvider();
     });
 

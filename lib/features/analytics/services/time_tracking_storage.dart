@@ -25,7 +25,7 @@ class TimeTrackingStorage {
     final prefs = await SharedPreferences.getInstance();
     final timers = prefs.getString(taskTimersKey);
     Map<String, dynamic> timersMap = timers != null ? jsonDecode(timers) : {};
-    timersMap[taskId] = totalTime.inMilliseconds;
+    timersMap[taskId] = totalTime.inMinutes;
     await prefs.setString(taskTimersKey, jsonEncode(timersMap));
   }
 

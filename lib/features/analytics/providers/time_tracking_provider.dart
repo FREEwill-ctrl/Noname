@@ -251,7 +251,7 @@ class TimeTrackingProvider extends ChangeNotifier {
     final timersStr = prefs.getString(TimeTrackingStorage.taskTimersKey);
     if (timersStr != null) {
       final timersMap = Map<String, dynamic>.from(jsonDecode(timersStr));
-      _taskTimers = timersMap.map((k, v) => MapEntry(k, Duration(milliseconds: v)));
+      _taskTimers = timersMap.map((k, v) => MapEntry(k, Duration(minutes: v)));
     }
     notifyListeners();
   }
