@@ -19,7 +19,6 @@ class AppTheme {
     secondary: _secondaryLight,
     tertiary: _tertiaryLight,
     surface: const Color(0xFFFFFBFE),
-    background: const Color(0xFFFFFBFE),
     error: const Color(0xFFBA1A1A),
   );
 
@@ -31,7 +30,6 @@ class AppTheme {
     secondary: _secondaryDark,
     tertiary: _tertiaryDark,
     surface: const Color(0xFF1C1B1F),
-    background: const Color(0xFF1C1B1F),
     error: const Color(0xFFFFB4AB),
   );
 
@@ -93,7 +91,7 @@ class AppTheme {
     // Input decoration theme
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
-      fillColor: _lightColorScheme.surfaceVariant.withOpacity(0.5),
+      fillColor: _lightColorScheme.surfaceContainerHighest.withOpacity(0.5),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),
         borderSide: BorderSide.none,
@@ -124,7 +122,7 @@ class AppTheme {
 
     // Chip theme
     chipTheme: ChipThemeData(
-      backgroundColor: _lightColorScheme.surfaceVariant,
+      backgroundColor: _lightColorScheme.surfaceContainerHighest,
       selectedColor: _lightColorScheme.secondaryContainer,
       labelStyle: TextStyle(
         color: _lightColorScheme.onSurfaceVariant,
@@ -288,7 +286,7 @@ class AppTheme {
     // Input decoration theme
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
-      fillColor: _darkColorScheme.surfaceVariant.withOpacity(0.5),
+      fillColor: _darkColorScheme.surfaceContainerHighest.withOpacity(0.5),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),
         borderSide: BorderSide.none,
@@ -319,7 +317,7 @@ class AppTheme {
 
     // Chip theme
     chipTheme: ChipThemeData(
-      backgroundColor: _darkColorScheme.surfaceVariant,
+      backgroundColor: _darkColorScheme.surfaceContainerHighest,
       selectedColor: _darkColorScheme.secondaryContainer,
       labelStyle: TextStyle(
         color: _darkColorScheme.onSurfaceVariant,

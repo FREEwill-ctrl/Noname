@@ -13,8 +13,10 @@ class DeadlinePerformanceScatterChart extends StatelessWidget {
         scatterSpots: List.generate(daysToDeadline.length, (i) => ScatterSpot(
           daysToDeadline[i],
           timeDiffMinutes[i],
-          color: timeDiffMinutes[i] < 0 ? Colors.green : Colors.red,
-          radius: 8,
+          dotPainter: FlDotCirclePainter(
+            radius: 8,
+            color: timeDiffMinutes[i] < 0 ? Colors.green : Colors.red,
+          ),
         )),
         minX: daysToDeadline.isEmpty ? 0 : daysToDeadline.reduce((a, b) => a < b ? a : b) - 1,
         maxX: daysToDeadline.isEmpty ? 1 : daysToDeadline.reduce((a, b) => a > b ? a : b) + 1,
