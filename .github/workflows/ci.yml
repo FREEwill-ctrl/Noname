@@ -2,8 +2,6 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches: [ main, develop ]
-  pull_request:
     branches: [ main ]
 
 jobs:
@@ -64,31 +62,6 @@ jobs:
       with:
         name: release-aab
         path: build/app/outputs/bundle/release/app-release.aab
-
-  build-ios:
-    needs: test
-    runs-on: macos-latest
-    
-    steps:
-    - uses: actions/checkout@v4
-    
-    - name: Setup Flutter
-      uses: subosito/flutter-action@v2
-      with:
-        flutter-version: '3.16.0'
-        channel: 'stable'
-    
-    - name: Get dependencies
-      run: flutter pub get
-    
-    - name: Build iOS (no codesign)
-      run: flutter build ios --release --no-codesign
-    
-    - name: Upload iOS build artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: ios-build
-        path: build/ios/iphoneos/Runner.app
 
   release:
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
@@ -159,4 +132,6 @@ jobs:
         asset_path: ./artifacts/app-release.aab
         asset_name: buildfork-optimized-v${{ steps.version.outputs.VERSION }}.aab
         asset_content_type: application/octet-stream
+
+# NOTE: iOS build job and develop/pull_request triggers removed for Android-only optimization.
 
